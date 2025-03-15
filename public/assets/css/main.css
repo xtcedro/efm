@@ -1,7 +1,45 @@
 /* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+/* Color Variables */
+:root {
+    --primary-color: linear-gradient(135deg, #D60000, #8B0000, #1E1E5A, #000000); /* Red to Dark Blue to Black */
+    --secondary-color: #4B0082; /* Deep Purple */
+    --accent-color: #FFD700; /* Gold */
+    --cta-color: #FF0000; /* Call to Action Red */
+    
+    --text-light: #ffffff;
+    --text-dark: #222222;
 
+    --background-light: #f8f9fa;
+    --background-dark: #0F172A;
+    
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --card-bg: #ffffff;
+    --border-color: #4B5563;
+    --loading-color: #FFD700;
+
+    --chat-bg: #1E293B;
+    --user-bubble: #2563EB;
+    --bot-bubble: #374151;
+    --input-bg: #1F2937;
+
+    --light-color: #FFFFFF; /* White (for contrast) */
+    --dark-color: #000000; /* Black (if needed) */
+
+    --text-opacity: 0.9; /* Higher Opacity for Stronger Text */
+    --footer-shadow: rgba(0, 0, 0, 0.3); /* Darker Footer Shadow */
+    --overlay-bg: rgba(0, 0, 0, 0.6);
+
+    --glass-bg: rgba(27, 4, 70, 0.85); /* Dark Purple Transparency */
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+
+    --table-header-bg: #1E1E5A; /* Deep Blue */
+    --table-row-light: #f8f9fa;
+    --table-row-dark: #e2e3e5;
+
+    --service-bg: #4B0082; /* Slightly lighter Purple */
+}
 
 /* General Page Styling */
 body {

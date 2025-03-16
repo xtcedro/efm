@@ -1,0 +1,178 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Global Styling */
+* {
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* General Section Styling */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* ✅ Hero Section */
+.hero {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+}
+
+/* ✅ Contact Info Section */
+.contact-info {
+    background: var(--background-light);
+    padding: 60px 20px;
+}
+
+.contact-info p {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+}
+
+.contact-info ul {
+    list-style: none;
+    margin-top: 20px;
+    padding: 0;
+}
+
+.contact-info li {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
+
+.contact-info i {
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+/* ✅ Social Media Section */
+.social-media {
+    background: var(--background-dark);
+    color: var(--text-light);
+    padding: 60px 20px;
+}
+
+.social-media p {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    font-size: 1.3rem;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    background: var(--secondary-color);
+    transition: background 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.social-icon:hover {
+    background: var(--cta-color);
+    transform: scale(1.05);
+}
+
+/* ✅ Call-to-Action Button */
+.cta-button {
+    display: inline-block;
+    padding: 14px 20px;
+    font-size: 1.3rem;
+    color: var(--text-light);
+    background: var(--cta-color);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+/* ✅ Contact CTA Section */
+.cta {
+    background: var(--service-bg);
+    color: var(--text-light);
+    padding: 60px 20px;
+}
+
+.cta a {
+    margin-top: 20px;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero p,
+    .contact-info p,
+    .social-media p {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        font-size: 1.2rem;
+        padding: 12px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p,
+    .contact-info p,
+    .social-media p {
+        font-size: 1.1rem;
+    }
+
+    .cta-button {
+        font-size: 1.1rem;
+        padding: 10px 15px;
+    }
+}

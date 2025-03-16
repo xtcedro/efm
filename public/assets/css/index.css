@@ -10,17 +10,6 @@
     padding: 0;
 }
 
-/* General Section Styling */
-section {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-h2 {
-    font-size: 2rem;
-    color: var(--primary-color);
-    margin-bottom: 20px;
-}
 
 /* ✅ Why Choose Us Section */
 .why-choose-us {

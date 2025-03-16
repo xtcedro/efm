@@ -1,0 +1,210 @@
+/* ✅ Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* ✅ Appointment Booker Section */
+.appointment-booker {
+    background: var(--text-light);
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0px 8px 18px var(--shadow-color);
+    border-left: 6px solid var(--secondary-color);
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+/* ✅ Section Header */
+.appointment-booker h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* ✅ Urgency Message */
+.urgent {
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    background: rgba(255, 215, 0, 0.15);
+    padding: 12px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 2px solid var(--secondary-color);
+    text-transform: uppercase;
+}
+
+/* ✅ Form Styling */
+.appointment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    margin-top: 15px;
+}
+
+/* ✅ Form Groups */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* ✅ Labels */
+.form-group label {
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+/* ✅ Input Fields */
+input, select, textarea {
+    padding: 14px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    background: var(--text-light);
+    color: var(--text-dark);
+    transition: all 0.3s ease-in-out;
+    box-shadow: inset 0px 2px 5px var(--shadow-color);
+}
+
+/* ✅ Input Focus Effect */
+input:focus, select:focus, textarea:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+    box-shadow: 0px 0px 8px var(--secondary-color);
+}
+
+/* ✅ Textarea */
+textarea {
+    resize: none;
+    min-height: 120px;
+}
+
+/* ✅ Buttons */
+.btn {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    padding: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0px 4px 10px var(--shadow-color);
+}
+
+/* ✅ Hover Effect */
+.btn:hover {
+    background: #e6c300;
+    transform: scale(1.08);
+    box-shadow: 0px 6px 18px rgba(255, 215, 0, 0.5);
+}
+
+/* ✅ Response Messages */
+.response-message {
+    padding: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    display: none;
+    text-align: center;
+    font-size: 1.1rem;
+    transition: opacity 0.3s ease-in-out, transform 0.2s ease-in-out;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* ✅ Success Message */
+.response-message.success {
+    background-color: #28a745; /* Green */
+    color: var(--text-light);
+    border-left: 5px solid #218838;
+}
+
+/* ✅ Error Message */
+.response-message.error {
+    background-color: #dc3545; /* Red */
+    color: var(--text-light);
+    border-left: 5px solid #c82333;
+}
+
+/* ✅ Info Message */
+.response-message.info {
+    background-color: #ffc107; /* Yellow */
+    color: var(--text-dark);
+    border-left: 5px solid #e0a800;
+}
+
+/* ✅ Fade-in Effect */
+.response-message.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ✅ View Appointments Button */
+.view-appointments {
+    display: block;
+    text-align: center;
+    margin: 25px auto;
+}
+
+/* ✅ Fade-in Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+    .appointment-booker {
+        max-width: 90%;
+        padding: 2rem;
+    }
+
+    .btn {
+        font-size: 1.2rem;
+        padding: 14px;
+    }
+}
+
+/* ✅ Urgency Message - Eye-Catching & Animated */
+.urgent {
+    font-size: 1.4rem;
+    color: var(--primary-color);
+    font-weight: bold;
+    background: linear-gradient(135deg, rgba(255, 215, 0, 0.3), rgba(255, 215, 0, 0.1));
+    padding: 14px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+    border: 3px solid var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    box-shadow: 0px 0px 12px rgba(255, 215, 0, 0.5);
+    animation: pulseGlow 1.5s infinite alternate ease-in-out;
+}
+
+/* ✅ Glowing Pulse Animation */
+@keyframes pulseGlow {
+    from {
+        box-shadow: 0px 0px 8px rgba(255, 215, 0, 0.5);
+    }
+    to {
+        box-shadow: 0px 0px 20px rgba(255, 215, 0, 0.8);
+        transform: scale(1.03);
+    }
+}

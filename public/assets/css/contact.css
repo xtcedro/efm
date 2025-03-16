@@ -41,7 +41,7 @@ h2 {
 
 /* ✅ Contact Info Section */
 .contact-info {
-    background: var(--background-light);
+    background: var(--background-dark);
     padding: 60px 20px;
 }
 

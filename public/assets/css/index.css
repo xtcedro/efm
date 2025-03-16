@@ -13,7 +13,7 @@
 
 /* ✅ Why Choose Us Section */
 .why-choose-us {
-    background: var(--background-light);
+    background: var(--background-dark);
     padding: 60px 20px;
     text-align: center;
 }

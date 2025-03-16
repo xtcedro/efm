@@ -1,0 +1,190 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Global Styling */
+* {
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* General Section Styling */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+/* ✅ Why Choose Us Section */
+.why-choose-us {
+    background: var(--background-light);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.why-choose-us ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.why-choose-us li {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+    text-align: left;
+    padding-left: 35px;
+    position: relative;
+}
+
+.why-choose-us li::before {
+    content: "✔️";
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+/* ✅ Our Services Section */
+.services {
+    background: var(--background-dark);
+    color: var(--text-light);
+    padding: 60px 20px;
+}
+
+.services ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.services li {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-light);
+    text-align: left;
+    padding-left: 35px;
+    position: relative;
+}
+
+.services li::before {
+    content: "🚛";
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+/* ✅ Pricing Section */
+.pricing {
+    background: var(--background-light);
+    padding: 60px 20px;
+}
+
+.pricing ul {
+    list-style: none;
+    margin-top: 20px;
+}
+
+.pricing li {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: var(--text-dark);
+    text-align: left;
+    padding-left: 35px;
+    position: relative;
+}
+
+.pricing li::before {
+    content: "💰";
+    position: absolute;
+    left: 0;
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+}
+
+/* ✅ Call-to-Action Button */
+.cta-button {
+    display: inline-block;
+    padding: 14px 20px;
+    font-size: 1.3rem;
+    color: var(--text-light);
+    background: var(--cta-color);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease-in-out;
+}
+
+.cta-button:hover {
+    background: var(--secondary-color);
+    color: var(--primary-color);
+    transform: scale(1.05);
+}
+
+/* ✅ Testimonials Section */
+.testimonials {
+    background: var(--background-dark);
+    color: var(--text-light);
+    padding: 60px 20px;
+}
+
+.testimonials p {
+    font-size: 1.3rem;
+    font-style: italic;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* ✅ Contact Section */
+.contact {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: 60px 20px;
+}
+
+.contact a {
+    margin-top: 20px;
+}
+
+/* ✅ Responsive Design */
+@media (max-width: 768px) {
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    .why-choose-us li,
+    .services li,
+    .pricing li,
+    .testimonials p {
+        font-size: 1.2rem;
+    }
+
+    .cta-button {
+        font-size: 1.2rem;
+        padding: 12px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.6rem;
+    }
+
+    .why-choose-us li,
+    .services li,
+    .pricing li,
+    .testimonials p {
+        font-size: 1.1rem;
+    }
+
+    .cta-button {
+        font-size: 1.1rem;
+        padding: 10px 15px;
+    }
+}

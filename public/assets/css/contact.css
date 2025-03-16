@@ -18,7 +18,7 @@ section {
 
 h2 {
     font-size: 2rem;
-    color: var(--primary-color);
+    color: var(--text-light);
     margin-bottom: 20px;
 }
 

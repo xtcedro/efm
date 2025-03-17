@@ -1,0 +1,271 @@
+/* Import Font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Navigation Bar Styles */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--primary-color);
+    padding: 12px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    border-bottom: 4px solid var(--secondary-color);
+}
+
+/* Navbar Left */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Space between menu and title */
+}
+
+/* Navigation Title */
+.nav-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--accent-color);
+    white-space: nowrap;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .nav-title {
+        font-size: 1.5rem;
+    }
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.3s ease, text-shadow 0.3s;
+}
+
+.hamburger-menu:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -300px;
+    width: 300px;
+    height: 100vh;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    padding: 1.2rem;
+    transition: left 0.4s ease-in-out;
+    z-index: 1100;
+    opacity: 0.95;
+}
+
+.sidebar.visible {
+    left: 0;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+.sidebar-header h2 {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+}
+
+/* Close Button */
+.close-menu {
+    font-size: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    transition: transform 0.3s ease, text-shadow 0.3s;
+}
+
+.close-menu:hover {
+    transform: scale(1.1);
+    text-shadow: 0 0 10px var(--accent-color);
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 1rem;
+}
+
+.nav-links li {
+    margin: 1.2rem 0;
+}
+
+.nav-links a {
+    display: block;
+    font-size: 1.2rem;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 6px;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    transform: translateX(10px);
+    font-weight: bold;
+}
+
+/* Active Link */
+.nav-links a.active {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    box-shadow: 0 0 12px var(--accent-color);
+}
+
+/* CTA Button */
+.cta-container {
+    margin-top: 1.5rem;
+    text-align: center;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--cta-color);
+    color: var(--text-light);
+    padding: 12px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: background 0.3s ease, transform 0.3s;
+}
+
+.cta-button:hover {
+    background: var(--secondary-color);
+    transform: scale(1.05);
+}
+
+/* Sidebar Hidden State */
+.sidebar.hidden {
+    left: -100%;
+}
+
+/* Overlay Effect */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--overlay-bg);
+    z-index: 900;
+    transition: opacity 0.3s ease;
+    display: none;
+}
+
+.overlay.visible {
+    display: block;
+    opacity: 1;
+}
+
+/* Prevent Scrolling When Sidebar is Open */
+.no-scroll {
+    overflow: hidden;
+}
+
+/* ✅ Responsive Navigation Bar for Tablets & Mobile */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+
+    .nav-title {
+        font-size: 1.5rem;
+    }
+
+    .hamburger-menu {
+        font-size: 1.8rem;
+        padding: 10px;
+    }
+
+    .sidebar {
+        width: 280px;
+    }
+
+    .nav-links a {
+        font-size: 1.1rem;
+        padding: 10px;
+    }
+}
+
+/* ✅ Mobile-Specific Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 8px 12px;
+    }
+
+    .nav-title {
+        font-size: 1.4rem;
+    }
+
+    .hamburger-menu {
+        font-size: 1.6rem;
+        padding: 8px;
+    }
+
+    .sidebar {
+        width: 250px;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+        padding: 8px;
+    }
+}
+
+/* ✅ Extra Small Devices (Phones) */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: row;
+        align-items: center;
+        padding: 6px 10px;
+    }
+
+    .nav-title {
+        font-size: 1.2rem;
+    }
+
+    .hamburger-menu {
+        font-size: 1.4rem;
+        padding: 6px;
+    }
+
+    .sidebar {
+        width: 220px;
+    }
+
+    .nav-links a {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+}

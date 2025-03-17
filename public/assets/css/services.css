@@ -1,0 +1,117 @@
+/* Services Section */
+.services {
+    background-color: var(--background-light);
+    padding: 3rem 2rem;
+    text-align: center;
+}
+
+.services h2 {
+    color: var(--primary-color);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+}
+
+/* Service Cards */
+.service {
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin: 1.5rem auto;
+    padding: 1.5rem;
+    max-width: 900px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--shadow-color);
+}
+
+.service img {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    object-fit: cover;
+    margin-right: 1.5rem;
+}
+
+.service div {
+    text-align: left;
+}
+
+.service h3 {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.service p {
+    color: var(--text-dark);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* Get a Quote Section */
+.quote {
+    background: var(--primary-color);
+    color: var(--text-light);
+    text-align: center;
+    padding: 2.5rem 2rem;
+    border-radius: 10px;
+    margin: 2rem auto;
+    max-width: 800px;
+    box-shadow: var(--shadow);
+}
+
+.quote h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.quote p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Call-to-Action Button */
+.cta-button {
+    background-color: var(--cta-color);
+    color: var(--text-light);
+    font-size: 1.2rem;
+    padding: 0.8rem 1.5rem;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.3s ease;
+    font-weight: bold;
+}
+
+.cta-button:hover {
+    background-color: var(--accent-color);
+    color: var(--dark-color);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px var(--accent-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .service {
+        flex-direction: column;
+        text-align: center;
+        padding: 1rem;
+    }
+
+    .service img {
+        margin-bottom: 1rem;
+        width: 100px;
+        height: 100px;
+    }
+
+    .quote {
+        padding: 2rem;
+    }
+}

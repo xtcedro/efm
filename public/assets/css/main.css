@@ -39,21 +39,7 @@ body {
     line-height: 1.6;
 }
 
-/* Navigation Bar */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: var(--primary-color);
-    padding: 15px 20px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: var(--shadow);
-    z-index: 1000;
-    border-bottom: 5px solid var(--secondary-color);
-}
+
 
 /* Hero Section */
 .hero {

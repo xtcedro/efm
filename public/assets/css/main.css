@@ -1,0 +1,193 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* Root Color Variables */
+:root {
+    --primary-color: linear-gradient(135deg, #D60000, #8B0000, #1E1E5A, #000000); /* Red to Deep Blue to Black */
+    --secondary-color: #FFD700; /* Gold */
+    --accent-color: #4B0082; /* Deep Purple */
+    --cta-color: #FF0000; /* Call-to-Action Red */
+
+    --text-light: #ffffff;
+    --text-dark: #222222;
+    --background-light: #f8f9fa;
+    --background-dark: #0F172A;
+
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --card-bg: #ffffff;
+    --border-color: #4B5563;
+    --overlay-bg: rgba(0, 0, 0, 0.6);
+
+    --footer-shadow: rgba(0, 0, 0, 0.3);
+    --glass-bg: rgba(27, 4, 70, 0.85);
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+/* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Body */
+body {
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--primary-color);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--shadow);
+    z-index: 1000;
+    border-bottom: 5px solid var(--secondary-color);
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: var(--primary-color);
+    color: var(--text-light);
+}
+
+.hero-banner {
+    max-width: 250px;
+    display: block;
+    margin: 0 auto 15px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 10px auto;
+}
+
+/* CTA Button */
+.cta-button {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: var(--cta-color);
+    color: var(--text-light);
+    font-size: 1.2rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.cta-button:hover {
+    background: var(--secondary-color);
+    color: var(--text-dark);
+}
+
+/* Sections */
+section {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Why Choose Us */
+.why-choose-us, .services, .pricing, .testimonials, .contact {
+    background: var(--background-light);
+    box-shadow: var(--shadow);
+    padding: 40px;
+    border-radius: 10px;
+    margin: 30px auto;
+    max-width: 90%;
+}
+
+/* Lists */
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 1.2rem;
+    padding: 8px 0;
+}
+
+/* Pricing */
+.pricing p {
+    font-size: 1.2rem;
+}
+
+/* Testimonials */
+.testimonials {
+    background: var(--glass-bg);
+    color: var(--text-light);
+    padding: 50px;
+    border-radius: 10px;
+}
+
+/* Contact */
+.contact {
+    background: var(--secondary-color);
+    color: var(--text-dark);
+    padding: 50px;
+    font-size: 1.3rem;
+}
+
+/* Footer */
+footer {
+    background: var(--background-dark);
+    color: var(--text-light);
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+    border-top: 3px solid var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .cta-button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+    
+    section {
+        padding: 30px 15px;
+    }
+    
+    ul li {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 8px 18px;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+}

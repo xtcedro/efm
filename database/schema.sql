@@ -38,3 +38,9 @@ INSERT INTO appointments (name, phone, email, from_address, to_address, service,
 VALUES
 ('John Doe', '1234567890', 'john.doe@example.com', '123 Main St, OKC', '456 Elm St, OKC', 'Residential Moving', 'Need assistance with furniture moving.'),
 ('Jane Smith', '0987654321', 'jane.smith@example.com', '789 Oak St, OKC', '321 Pine St, Tulsa', 'Long-Distance Moving', 'Moving to a new home in Tulsa. Need careful handling.');
+
+-- Grant all privileges on the movers_db database to appointment_user
+GRANT ALL PRIVILEGES ON movers_db.* TO 'appointment_user'@'localhost';
+
+-- Apply the changes
+FLUSH PRIVILEGES;

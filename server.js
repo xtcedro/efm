@@ -3,7 +3,7 @@ import cors from "cors";
 import dotenv from "dotenv";
 import { db } from "./config/db.js";
 import appointmentRoutes from "./routes/appointments.js";
-import chatRoutes from "./routes/chatRoutes.js";
+import chatRoutes from "./routes/chat.js";
 import stripeRoutes from "./routes/stripe.js"; // ✅ ESM Import
 
 dotenv.config();

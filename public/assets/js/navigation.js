@@ -20,6 +20,7 @@ export function setupNavigation() {
                     <li><a href="about.html">📖 About Us</a></li>
                     <li><a href="services.html">🚛 Services</a></li>
                     <li><a href="contact.html">📬 Contact</a></li>
+                    <li><a href="chatbot.html">🤖 Chatbot</a></li>
                     <li><a href="payment.html">💵 Make a Payment</a></li>
                 </ul>
                 <div class="cta-container">

@@ -1,7 +1,162 @@
 /* Import Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+/* Navigation Bar */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: var(--primary-color);
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0px 4px 12px var(--shadow-color);
+    z-index: 1000;
+    border-bottom: 4px solid var(--secondary-color);
+    transition: background 0.3s ease-in-out;
+}
 
+/* Navbar Left Section */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+/* Navigation Title */
+.nav-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Make Title More Interactive */
+.nav-title:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .nav-title {
+        font-size: 1.6rem;
+    }
+}
+
+/* Hamburger Menu Button */
+.hamburger-menu {
+    font-size: 2.2rem;
+    background: none;
+    border: none;
+    color: var(--accent-color);
+    cursor: pointer;
+    padding: 10px;
+    transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+.hamburger-menu:hover {
+    transform: scale(1.15);
+    text-shadow: 0px 0px 15px var(--accent-color);
+}
+
+/* Sidebar Navigation - Glassmorphism Effect */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -320px;
+    width: 320px;
+    height: 100vh;
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    box-shadow: 0px 4px 15px var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    transition: left 0.5s ease-in-out;
+    z-index: 1100;
+    opacity: 0.97;
+    border-right: 3px solid var(--secondary-color);
+}
+
+/* Slide in the Sidebar */
+.sidebar.visible {
+    left: 0;
+}
+
+/* Sidebar Header */
+.sidebar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--accent-color);
+}
+
+/* Sidebar Header Title */
+.sidebar-header h2 {
+    color: var(--accent-color);
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+/* Close Button */
+.close-menu {
+    font-size: 1.8rem;
+    background: none;
+    border: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+}
+
+.close-menu:hover {
+    transform: scale(1.15);
+    text-shadow: 0 0 10px var(--secondary-color);
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    padding: 0;
+    margin-top: 1.5rem;
+}
+
+/* Navigation Links */
+.nav-links li {
+    margin: 1.5rem 0;
+}
+
+/* Navigation Links - Stylish Hover Effect */
+.nav-links a {
+    display: block;
+    font-size: 1.3rem;
+    color: var(--text-light);
+    text-decoration: none;
+    padding: 14px 20px;
+    border-radius: 8px;
+    transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+/* On Hover - Smooth Movement */
+.nav-links a:hover {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    transform: translateX(12px);
+    font-weight: bold;
+}
+
+/* Active Link Indicator */
+.nav-links a.active {
+    background: var(--secondary-color);
+    color: var(--background-dark);
+    font-weight: bold;
+    border-radius: 8px;
+    box-shadow: 0 0 15px var(--secondary-color);
+}
 /* CTA Button */
 .cta-container {
     margin-top: 1.5rem;

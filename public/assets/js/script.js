@@ -3,6 +3,7 @@ import { setupNavigation } from './navigation.js';
 import { submitAppointments } from './appointment-booker.js';
 import { fetchAppointments } from './public-appointments.js';
 import { initializeStripe, handlePayment } from './payment.js';
+import { initializeChatbot } from './chatbot.js'; // ✅ Import chatbot module
 
 document.addEventListener("DOMContentLoaded", () => {
     loadHeader();

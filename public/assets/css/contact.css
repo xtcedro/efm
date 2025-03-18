@@ -1,7 +1,7 @@
 /* Contact Section */
 .contact {
     background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));
-    color: var(--text-light);
+    color: var(--background-dark);
     padding: 60px 40px;
     text-align: center;
     font-size: 1.4rem;

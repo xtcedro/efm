@@ -1,58 +1,123 @@
-/* About Page Styling */
-
-/* Mission & Vision Sections */
+/* 🌟 About Page Styling: A Premium Look */
 .mission, .vision {
-    background-color: var(--background-light);
+    background: linear-gradient(135deg, var(--background-light) 0%, var(--background-dark) 100%);
     color: var(--text-dark);
-    padding: 3rem 2rem;
-    margin: 2rem auto;
-    border-radius: 10px;
-    box-shadow: var(--shadow);
-    max-width: 900px;
+    padding: 3.5rem 3rem;
+    margin: 3rem auto;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.12);
+    max-width: 950px;
     text-align: center;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
 }
 
+/* 🔥 Luxury Hover Effect */
+.mission:hover, .vision:hover {
+    transform: translateY(-8px);
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+/* 🎯 Section Headings */
 .mission h2, .vision h2 {
     color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 1rem;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    position: relative;
+    display: inline-block;
 }
 
+/* ✨ Underline Effect */
+.mission h2::after, .vision h2::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: var(--accent-color);
+    display: block;
+    margin: 12px auto 0;
+    border-radius: 2px;
+    transition: width 0.4s ease-in-out;
+}
+
+.mission:hover h2::after, .vision:hover h2::after {
+    width: 130px;
+}
+
+/* 📝 Elegant Paragraph Styling */
 .mission p, .vision p {
-    font-size: 1.2rem;
-    line-height: 1.6;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    font-weight: 500;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
 }
 
-/* List Styling */
+/* 🎯 Vision List Styling */
 .vision ul {
     list-style: none;
     padding: 0;
-    margin-top: 1rem;
+    margin-top: 1.5rem;
 }
 
+/* 💎 Vision List Items */
 .vision ul li {
-    font-size: 1.2rem;
-    padding: 0.5rem;
+    font-size: 1.3rem;
+    padding: 1rem;
     background: var(--card-bg);
-    border-left: 5px solid var(--secondary-color);
-    box-shadow: var(--shadow);
+    border-left: 6px solid var(--secondary-color);
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
     margin-bottom: 1rem;
     border-radius: 8px;
     text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
 }
 
-/* Responsive Design */
+/* ✨ Animated List Items */
+.vision ul li:hover {
+    transform: scale(1.05);
+    background: var(--accent-color);
+    color: var(--text-light);
+}
+
+/* 🎬 Fade-in Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 🔄 Apply Animations */
+.mission, .vision {
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+/* 📱 Responsive Adjustments */
 @media (max-width: 768px) {
-    .hero h1 {
+    .mission, .vision {
+        padding: 2.5rem;
+        margin: 2rem auto;
+    }
+
+    .mission h2, .vision h2 {
         font-size: 2rem;
     }
 
-    .mission, .vision {
-        padding: 2rem;
+    .mission p, .vision p {
+        font-size: 1.2rem;
     }
 
     .vision ul li {
-        font-size: 1rem;
+        font-size: 1.1rem;
         padding: 0.8rem;
     }
 }

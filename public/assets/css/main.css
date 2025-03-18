@@ -1,27 +1,7 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-/* Root Color Variables */
-:root {
-    --primary-color: linear-gradient(135deg, #D60000, #8B0000, #1E1E5A, #000000); /* Red to Deep Blue to Black */
-    --secondary-color: #FFD700; /* Gold */
-    --accent-color: #4B0082; /* Deep Purple */
-    --cta-color: #FF0000; /* Call-to-Action Red */
 
-    --text-light: #ffffff;
-    --text-dark: #222222;
-    --background-light: #f8f9fa;
-    --background-dark: #0F172A;
-
-    --shadow-color: rgba(0, 0, 0, 0.3);
-    --card-bg: #ffffff;
-    --border-color: #4B5563;
-    --overlay-bg: rgba(0, 0, 0, 0.6);
-
-    --footer-shadow: rgba(0, 0, 0, 0.3);
-    --glass-bg: rgba(27, 4, 70, 0.85);
-    --shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
-}
 
 /* General Styles */
 * {

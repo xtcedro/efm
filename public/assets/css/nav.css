@@ -208,3 +208,98 @@
     overflow: hidden;
 }
 
+/* ✅ Responsive Navigation Bar for Tablets & Mobile */
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 8px 14px;
+    }
+
+    .nav-title {
+        font-size: 1.4rem;
+    }
+
+    .hamburger-menu {
+        font-size: 1.6rem;
+        padding: 8px;
+    }
+
+    .sidebar {
+        width: 270px;
+    }
+
+    .nav-links a {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    /* ✅ Button Size Adjustment */
+    .cta-button {
+        font-size: 1rem;
+        padding: 10px 18px;
+    }
+}
+
+/* ✅ Mobile-Specific Styles */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 6px 10px;
+    }
+
+    .nav-title {
+        font-size: 1.3rem;
+    }
+
+    .hamburger-menu {
+        font-size: 1.5rem;
+        padding: 6px;
+    }
+
+    .sidebar {
+        width: 240px;
+    }
+
+    .nav-links a {
+        font-size: 0.95rem;
+        padding: 7px;
+    }
+
+    /* ✅ Button Size Adjustment */
+    .cta-button {
+        font-size: 0.9rem;
+        padding: 9px 16px;
+    }
+}
+
+/* ✅ Extra Small Devices (Phones) */
+@media (max-width: 480px) {
+    .navbar {
+        flex-direction: row;
+        align-items: center;
+        padding: 5px 8px;
+    }
+
+    .nav-title {
+        font-size: 1.1rem;
+    }
+
+    .hamburger-menu {
+        font-size: 1.3rem;
+        padding: 5px;
+    }
+
+    .sidebar {
+        width: 210px;
+    }
+
+    .nav-links a {
+        font-size: 0.85rem;
+        padding: 6px;
+    }
+
+    /* ✅ Button Size Adjustment */
+    .cta-button {
+        font-size: 0.85rem;
+        padding: 8px 14px;
+    }
+}
+

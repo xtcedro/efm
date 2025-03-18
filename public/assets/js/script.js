@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     setupNavigation();
     submitAppointments();
     fetchAppointments();
-
+    initializeChatbot(); // ✅ Initialize chatbot functionality
     // ✅ Initialize Stripe Payment Flow
     const stripeConfig = initializeStripe(
         "pk_live_YOUR_STRIPE_PUBLIC_KEY_HERE", // Replace with your actual Stripe public key

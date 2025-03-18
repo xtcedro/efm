@@ -1,6 +1,6 @@
 /* Contact Section */
 .contact {
-    
+    background: var(--primary-color);
     color: var(--secondary-color);
     padding: 60px 40px;
     text-align: center;

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Make a secure payment for your moving services with Efficient Movers LLC. We accept credit/debit cards, Apple Pay, Google Pay, and Cash App Pay.">
+    <title>💳 Secure Payment - Efficient Movers LLC</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script type="module" src="assets/js/script.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar"></nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1 class="hero-title">💳 Secure Your Move with Easy Payment</h1>
+        <p class="hero-subtitle">🚛 Pay for your moving services quickly and securely using multiple payment options.</p>
+    </section>
+
+    <!-- Payment Form Section -->
+    <main>
+        <section class="payment-section">
+            <h2>📦 Complete Your Payment</h2>
+            <p>We offer secure and flexible payment options. Choose your preferred method below.</p>
+
+            <form id="payment-form">
+                <label for="payment-amount">💰 Enter Payment Amount ($)</label>
+                <input id="payment-amount" type="number" placeholder="Enter Amount" required>
+
+                <!-- Apple Pay, Google Pay, Cash App Pay -->
+                <div id="payment-request-button"></div>
+
+                <!-- Traditional Card Payment -->
+                <div id="card-element"></div>
+
+                <button id="payment-button">💳 Pay Now</button>
+                <p id="payment-message"></p>
+            </form>
+        </section>
+
+        <section class="payment-info">
+            <h2>✅ Accepted Payment Methods</h2>
+            <ul>
+                <li>💳 Credit & Debit Cards</li>
+                <li>🍏 Apple Pay</li>
+                <li>📱 Google Pay</li>
+                <li>💵 Cash App Pay</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Contact Section -->
+    <section class="contact">
+        <h2>Need Help? Contact Us 📞</h2>
+        <p>If you have any issues with your payment, feel free to reach out.</p>
+        <ul>
+            <li>📧 Email: <a href="mailto:efficientmovers20@gmail.com">efficientmovers20@gmail.com</a></li>
+            <li>📞 Phone: <a href="tel:+14057623899">405-762-3899</a></li>
+        </ul>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer"></footer>
+
+</body>
+</html>

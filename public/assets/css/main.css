@@ -1,7 +1,33 @@
 /* Import Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+/* 🚀 Premium Root Color Variables */
+:root {
+    /* 🎨 Primary Brand Colors */
+    --primary-color: linear-gradient(135deg, #D60000, #8B0000, #1E1E5A, #000000); /* Dynamic Red → Deep Blue → Black */
+    --secondary-color: #FFD700; /* Luxurious Gold */
+    --accent-color: #4B0082; /* Royal Deep Purple */
+    --cta-color: #E60000; /* Bold Call-to-Action Red */
 
+    /* 🌟 Text Colors */
+    --text-light: #ffffff; /* Pure White for readability */
+    --text-dark: #1C1C1C; /* Deep Charcoal for smooth contrast */
+
+    /* 🌆 Background Colors */
+    --background-light: #F4F5F7; /* Soft Off-White for a modern, clean look */
+    --background-dark: #0A0E21; /* Elegant Dark Blue-Black for contrast */
+    --glass-bg: rgba(27, 4, 70, 0.85); /* Frosted Glass Effect for premium feel */
+
+    /* 🔲 UI & Card Elements */
+    --card-bg: #FFFFFF; /* Crisp White Cards */
+    --border-color: #4B5563; /* Muted Steel for Subtle Elegance */
+    --overlay-bg: rgba(0, 0, 0, 0.7); /* Soft Overlay for depth */
+
+    /* ✨ Shadows & Effects */
+    --shadow-color: rgba(0, 0, 0, 0.4); /* Richer Shadows for Premium Depth */
+    --shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Elevated Shadow for Elegant Elevation */
+    --footer-shadow: rgba(0, 0, 0, 0.4); /* Enhanced Footer Depth */
+}
 
 /* General Styles */
 * {

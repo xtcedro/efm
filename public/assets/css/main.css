@@ -131,13 +131,7 @@ ul li {
     border-radius: 10px;
 }
 
-/* Contact */
-.contact {
-    background: var(--secondary-color);
-    color: var(--text-dark);
-    padding: 50px;
-    font-size: 1.3rem;
-}
+
 
 /* Footer */
 footer {

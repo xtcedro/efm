@@ -1,117 +1,151 @@
-/* Services Section */
+/* 🚛 Services Section */
 .services {
     background-color: var(--background-light);
-    padding: 3rem 2rem;
+    padding: 4rem 2rem;
     text-align: center;
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease-in-out;
+}
+
+.services:hover {
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.15);
 }
 
 .services h2 {
     color: var(--primary-color);
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
-/* Service Cards */
+/* 🚛 Service Cards */
 .service {
     display: flex;
     align-items: center;
     background: var(--card-bg);
-    border-radius: 8px;
+    border-radius: 12px;
     box-shadow: var(--shadow);
-    margin: 1.5rem auto;
-    padding: 1.5rem;
-    max-width: 900px;
+    margin: 2rem auto;
+    padding: 2rem;
+    max-width: 950px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .service:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--shadow-color);
+    transform: scale(1.06);
+    box-shadow: 0 0 20px var(--shadow-color);
 }
 
-.service img {
-    width: 120px;
-    height: 120px;
-    border-radius: 8px;
-    object-fit: cover;
-    margin-right: 1.5rem;
-}
-
-.service div {
-    text-align: left;
-}
-
+/* 🏡 Service Titles */
 .service h3 {
     color: var(--secondary-color);
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.8rem;
+    font-weight: 700;
     margin-bottom: 0.5rem;
+    transition: color 0.3s ease-in-out;
 }
 
+.service:hover h3 {
+    color: var(--accent-color);
+}
+
+/* 📜 Service Description */
 .service p {
     color: var(--text-dark);
-    font-size: 1rem;
+    font-size: 1.1rem;
     line-height: 1.6;
 }
 
-/* Get a Quote Section */
+/* 💰 Get a Quote Section */
 .quote {
-    background: var(--primary-color);
+    background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
     color: var(--text-light);
     text-align: center;
-    padding: 2.5rem 2rem;
-    border-radius: 10px;
-    margin: 2rem auto;
-    max-width: 800px;
+    padding: 3rem 2rem;
+    border-radius: 12px;
+    margin: 3rem auto;
+    max-width: 850px;
     box-shadow: var(--shadow);
+    transition: all 0.3s ease-in-out;
+}
+
+.quote:hover {
+    box-shadow: 0 0 25px var(--secondary-color);
+    transform: translateY(-5px);
 }
 
 .quote h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    margin-bottom: 1rem;
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .quote p {
-    font-size: 1.2rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
 }
 
-/* Call-to-Action Button */
+/* 🎯 Call-to-Action Button */
 .cta-button {
-    background-color: var(--cta-color);
+    background: var(--cta-color);
     color: var(--text-light);
     font-size: 1.2rem;
-    padding: 0.8rem 1.5rem;
+    padding: 1rem 2rem;
     text-decoration: none;
-    border-radius: 6px;
-    transition: background 0.3s ease, transform 0.3s ease;
+    border-radius: 8px;
     font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    display: inline-block;
 }
 
 .cta-button:hover {
-    background-color: var(--accent-color);
+    background: var(--accent-color);
     color: var(--dark-color);
-    transform: scale(1.05);
-    box-shadow: 0 0 15px var(--accent-color);
+    transform: scale(1.08);
+    box-shadow: 0 0 20px var(--accent-color);
 }
 
-/* Responsive Design */
+/* 📱 Responsive Design */
 @media (max-width: 768px) {
     .service {
         flex-direction: column;
         text-align: center;
-        padding: 1rem;
-    }
-
-    .service img {
-        margin-bottom: 1rem;
-        width: 100px;
-        height: 100px;
+        padding: 1.5rem;
     }
 
     .quote {
-        padding: 2rem;
+        padding: 2.5rem;
+    }
+
+    .services h2 {
+        font-size: 2.2rem;
+    }
+
+    .service h3 {
+        font-size: 1.6rem;
+    }
+
+    .service p {
+        font-size: 1rem;
+    }
+
+    .quote h2 {
+        font-size: 2rem;
+    }
+
+    .quote p {
+        font-size: 1.1rem;
+    }
+
+    .cta-button {
+        font-size: 1.1rem;
+        padding: 0.9rem 1.8rem;
     }
 }

@@ -28,7 +28,7 @@
 .nav-title {
     font-size: 1.8rem;
     font-weight: bold;
-    color: var(--accent-color);
+    color: var(--secondary-color);
     white-space: nowrap;
 }
 

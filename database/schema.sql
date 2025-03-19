@@ -1,13 +1,15 @@
--- Schema for Efficient Movers LLC Appointment Database
--- Created: 2025-01-10
--- Last Updated: 2025-01-21
--- Schema Version: 1.3
+-- ✅ Create a new user for the database
+CREATE USER IF NOT EXISTS 'appointment_user'@'localhost' IDENTIFIED BY 'Password123!';
 
--- Create the database
+-- ✅ Create the movers_db database
 CREATE DATABASE IF NOT EXISTS movers_db;
 USE movers_db;
 
--- Create the appointments table
+-- ✅ Grant all privileges to the new user
+GRANT ALL PRIVILEGES ON movers_db.* TO 'appointment_user'@'localhost';
+FLUSH PRIVILEGES;
+
+-- ✅ Create the appointments table
 CREATE TABLE IF NOT EXISTS appointments (
     id INT AUTO_INCREMENT PRIMARY KEY,         
     name VARCHAR(100) NOT NULL,                
@@ -24,7 +26,7 @@ CREATE TABLE IF NOT EXISTS appointments (
     INDEX idx_email (email)  -- Optimize email searches
 );
 
--- Create the chat history table for customer inquiries (optional)
+-- ✅ Create the chat history table (optional, for chatbot interactions)
 CREATE TABLE IF NOT EXISTS chat_history (
     id INT AUTO_INCREMENT PRIMARY KEY,
     user_id INT NULL,  -- Can be NULL for anonymous chats
@@ -33,14 +35,8 @@ CREATE TABLE IF NOT EXISTS chat_history (
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
--- Optional: Insert sample data
+-- ✅ Insert Sample Data (Optional)
 INSERT INTO appointments (name, phone, email, from_address, to_address, service, message)
 VALUES
 ('John Doe', '1234567890', 'john.doe@example.com', '123 Main St, OKC', '456 Elm St, OKC', 'Residential Moving', 'Need assistance with furniture moving.'),
 ('Jane Smith', '0987654321', 'jane.smith@example.com', '789 Oak St, OKC', '321 Pine St, Tulsa', 'Long-Distance Moving', 'Moving to a new home in Tulsa. Need careful handling.');
-
--- Grant all privileges on the movers_db database to appointment_user
-GRANT ALL PRIVILEGES ON movers_db.* TO 'appointment_user'@'localhost';
-
--- Apply the changes
-FLUSH PRIVILEGES;

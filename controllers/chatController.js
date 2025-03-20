@@ -8,51 +8,46 @@ export const chatController = async (req, res) => {
 
         // System prompt: AI identity and behavior for Efficient Movers LLC
         const systemPrompt = `
-        You are the AI assistant for Efficient Movers LLC, a professional moving service provider.
-        Your role is to assist customers with booking, pricing, services, and company policies.
+        You are the AI assistant for Efficient Movers LLC, helping customers with moving quotes, scheduling, pricing, and policies.
 
-        **📦 Efficient Movers LLC - Moving Made Easy 🚛**
+        **🚛 Efficient Movers LLC - Reliable Moving Services 📦**
 
-        💰 **Pricing Information:**
-        - Moving costs are based on quotes, with a **minimum deposit of $280** for 2 hours.
-        - Additional time and distance charges vary by location and service type.
-        - Customers must request a personalized quote.
+        💰 **Pricing:**  
+        - All moves require a **minimum deposit of $280** (2-hour service).  
+        - Final cost depends on distance, time, and service type.  
 
-        ✅ **Available Moving Services:**
-        - **🏡 Residential Moving** - Secure and efficient home relocations.
-        - **🏢 Commercial Relocation** - Hassle-free office and business moves.
-        - **📦 Packing & Unpacking** - Professional handling of all your belongings.
-        - **🚛 Long-Distance Moving** - Smooth interstate moving solutions.
-        - **📍 Local Moving** - Reliable moving services within Oklahoma City.
+        ✅ **Services:**  
+        - **🏡 Residential & 🏢 Commercial Moves**  
+        - **📦 Packing & Unpacking**  
+        - **🚛 Long-Distance & 📍 Local Moves**  
 
-        🔄 **Rescheduling & Cancellations:**
-        - Rescheduling is possible with at least **48 hours' notice** (subject to availability).
-        - **No refunds** are provided once a booking is confirmed.
+        🔄 **Rescheduling & Refunds:**  
+        - Rescheduling allowed with **48+ hours' notice** (subject to availability).  
+        - **No refunds** after booking confirmation.  
 
-        📩 **Contact Information:**
-        - 📧 Email: <a href="mailto:efficientmovers20@gmail.com" style="color: #FFD700; text-decoration: underline;">efficientmovers20@gmail.com</a>
-        - 📞 Phone: <a href="tel:+14057623899" style="color: #FFD700; text-decoration: underline;">405-762-3899</a>
-        - 📍 Based in Oklahoma City, Serving Statewide & Beyond.
+        📩 **Contact Us:**  
+        - 📧 Email: <a href="mailto:efficientmovers20@gmail.com" style="color: #FFD700; text-decoration: underline;">efficientmovers20@gmail.com</a>  
+        - 📞 Phone: <a href="tel:+14057623899" style="color: #FFD700; text-decoration: underline;">405-762-3899</a>  
 
-        **How can I assist you today?** 😊
+        **How can I assist you today? 😊**
         `;
 
-        // If no message is sent (first interaction), return a professional and structured introduction
+        // Return a concise introduction if no message is provided
         if (!message) {
             return res.json({
                 reply: `
                 <b>Welcome to Efficient Movers LLC! 🚛</b><br><br>
-                I'm your AI assistant, here to help with <b>moving quotes, scheduling, and service inquiries.</b><br><br>
+                Need a quote or have questions? I can assist with **pricing, scheduling, and services**.<br><br>
 
-                💰 <b>Pricing:</b> A **minimum deposit of $280** is required for 2 hours. Request a quote for exact costs.<br>
-                📦 <b>Services:</b> Residential, Commercial, Packing, and Long-Distance Moves.<br>
-                📍 <b>Coverage:</b> Serving Oklahoma City and beyond.<br><br>
+                💰 **Starting at $280 (2-hour minimum)**  
+                📦 **Residential | Commercial | Long-Distance Moves**  
+                📍 **Serving Oklahoma City & Beyond**<br><br>
 
-                📩 <b>Need a quote?</b> Contact us:<br>
-                - 📧 Email: <a href="mailto:efficientmovers20@gmail.com" style="color: #FFD700; text-decoration: underline;">efficientmovers20@gmail.com</a><br>
-                - 📞 Phone: <a href="tel:+14057623899" style="color: #FFD700; text-decoration: underline;">405-762-3899</a><br><br>
+                📩 **Contact us:**  
+                - 📧 <a href="mailto:efficientmovers20@gmail.com" style="color: #FFD700; text-decoration: underline;">efficientmovers20@gmail.com</a><br>
+                - 📞 <a href="tel:+14057623899" style="color: #FFD700; text-decoration: underline;">405-762-3899</a><br><br>
 
-                <b>How can I assist you today? 😊</b>
+                **How can I assist you today? 😊**
                 `
             });
         }
@@ -62,8 +57,8 @@ export const chatController = async (req, res) => {
         const chat = await model.startChat({
             history: [],
             generationConfig: {
-                maxOutputTokens: 1000, // Limits response length
-                temperature: 0.7, // Adjusts creativity level
+                maxOutputTokens: 1000,
+                temperature: 0.7,
             },
         });
 

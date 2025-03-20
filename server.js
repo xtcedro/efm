@@ -13,8 +13,12 @@ app.use(express.json());
 app.use(cors());
 app.use(express.static("public"));
 
-// ✅ Register Stripe routes
+// ✅ Debugging: Log API Route Registrations
+console.log("✅ Registering API Routes...");
+console.log("➡️ Appointments: /api/appointments");
+console.log("➡️ Chatbot: /api/chat");
 
+// ✅ Register API routes
 app.use("/api/appointments", appointmentRoutes);
 app.use("/api/chat", chatRoutes);
 

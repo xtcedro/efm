@@ -1,27 +1,44 @@
-/* ✅ Import Font */
+/* ✅ Import Elegant Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-/* ✅ Chatbot General Styles */
+/* ✅ Chatbot Container */
 .chat-container {
     max-width: 800px;
     margin: 40px auto;
-    padding: 20px;
+    padding: 25px;
     background: var(--card-bg);
     box-shadow: var(--shadow);
-    border-radius: 12px;
-    border-left: 5px solid var(--secondary-color);
-    animation: fadeIn 1s ease-in-out;
+    border-radius: 14px;
+    border-left: 6px solid var(--secondary-color);
+    animation: fadeIn 0.8s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+}
+
+.chat-container:hover {
+    transform: translateY(-5px);
 }
 
 /* ✅ Chat Box Styling */
 .chat-box {
-    max-height: 400px;
+    max-height: 450px;
     overflow-y: auto;
-    padding: 15px;
+    padding: 18px;
     background: var(--background-light);
-    border-radius: 10px;
+    border-radius: 12px;
     border: 2px solid var(--border-color);
-    box-shadow: inset 0 4px 10px var(--shadow-color);
+    box-shadow: inset 0 5px 12px var(--shadow-color);
+    scrollbar-width: thin;
+    scrollbar-color: var(--secondary-color) var(--background-light);
+}
+
+/* ✅ Scrollbar Customization */
+.chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background: var(--secondary-color);
+    border-radius: 8px;
 }
 
 /* ✅ Chat Messages */
@@ -29,10 +46,17 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 12px;
-    padding: 10px;
-    border-radius: 8px;
+    padding: 12px;
+    border-radius: 10px;
     width: fit-content;
-    max-width: 80%;
+    max-width: 75%;
+    font-size: 1.1rem;
+    line-height: 1.5;
+    transition: transform 0.3s ease-in-out;
+}
+
+.chat-message:hover {
+    transform: scale(1.02);
 }
 
 /* ✅ User Messages */
@@ -42,6 +66,7 @@
     color: var(--text-light);
     border-top-right-radius: 0;
     text-align: left;
+    font-weight: 600;
 }
 
 /* ✅ Bot Messages */
@@ -51,13 +76,14 @@
     color: var(--text-light);
     border-top-left-radius: 0;
     text-align: left;
+    font-weight: 500;
 }
 
 /* ✅ Bot & User Labels */
 .user-label,
 .bot-label {
     font-weight: bold;
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     margin-bottom: 5px;
     display: block;
 }
@@ -69,28 +95,30 @@
 /* ✅ Input Container */
 .input-container {
     display: flex;
-    padding: 12px;
+    padding: 14px;
     background: var(--background-dark);
-    border-radius: 10px;
+    border-radius: 12px;
     align-items: center;
     margin-top: 15px;
+    box-shadow: var(--shadow);
 }
 
 /* ✅ Input Field */
 #user-input {
     flex-grow: 1;
-    padding: 12px;
-    font-size: 1rem;
+    padding: 14px;
+    font-size: 1.1rem;
     border: 2px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 10px;
     background: var(--background-light);
     color: var(--text-dark);
-    transition: border 0.3s ease;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
 }
 
 #user-input:focus {
-    border-color: var(--cta-color);
+    border-color: var(--secondary-color);
     outline: none;
+    box-shadow: 0 0 10px var(--secondary-color);
 }
 
 /* ✅ Send Button */
@@ -98,18 +126,20 @@
     background: var(--cta-color);
     color: var(--text-light);
     border: none;
-    padding: 12px 18px;
+    padding: 14px 20px;
     margin-left: 12px;
-    border-radius: 8px;
-    font-size: 1rem;
+    border-radius: 10px;
+    font-size: 1.1rem;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.2s ease;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
 }
 
 #send-btn:hover {
     background: var(--secondary-color);
     color: var(--text-dark);
     transform: scale(1.05);
+    box-shadow: 0 0 12px var(--secondary-color);
 }
 
 /* ✅ Chatbot Fade-In Animation */
@@ -128,7 +158,7 @@
 @media (max-width: 768px) {
     .chat-container {
         width: 95%;
-        padding: 15px;
+        padding: 18px;
     }
 
     .chat-box {
@@ -136,12 +166,12 @@
     }
 
     #user-input {
-        font-size: 0.9rem;
-        padding: 10px;
+        font-size: 1rem;
+        padding: 12px;
     }
 
     #send-btn {
-        font-size: 0.9rem;
-        padding: 10px 15px;
+        font-size: 1rem;
+        padding: 12px 18px;
     }
 }

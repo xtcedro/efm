@@ -4,7 +4,7 @@ export function initializeChatbot() {
     const chatBox = document.getElementById("chat-box");
 
     if (!userInput || !sendButton || !chatBox) {
-        console.warn("Chatbot elements not found. Skipping initialization.");
+        console.warn("⚠️ Chatbot elements not found. Skipping initialization.");
         return;
     }
 
@@ -16,26 +16,34 @@ export function initializeChatbot() {
         }
     });
 
-    fetchIntroduction();
+    fetchIntroduction(); // Fetch AI introduction when chatbot loads
 }
 
-// Fetch the AI introduction message when the chatbot loads
+// ✅ **Fetch the AI introduction message when the chatbot loads**
 async function fetchIntroduction() {
     try {
+        console.log("📡 Fetching chatbot introduction...");
+        
         const response = await fetch("/api/chat", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({})
+            body: JSON.stringify({}) // Sending empty body to trigger introduction response
         });
 
+        if (!response.ok) {
+            throw new Error(`HTTP Error! Status: ${response.status}`);
+        }
+
         const data = await response.json();
+        console.log("✅ Chatbot Introduction Response:", data);
+
         appendMessage("bot", "Efficient Movers AI Assistant 🤖", formatMessage(data.reply), true);
     } catch (error) {
-        console.error("Error fetching AI introduction:", error);
+        console.error("❌ Error fetching AI introduction:", error);
     }
 }
 
-// Append a message to the chatbox
+// ✅ **Append a message to the chatbox**
 function appendMessage(type, sender, message, isTypingEffect = false) {
     const chatBox = document.getElementById("chat-box");
     const messageContainer = document.createElement("div");
@@ -60,7 +68,7 @@ function appendMessage(type, sender, message, isTypingEffect = false) {
     }
 }
 
-// Simulate a typing effect for AI responses
+// ✅ **Simulate a typing effect for AI responses**
 function simulateTypingEffect(message, element) {
     let index = 0;
     const tempDiv = document.createElement("div");
@@ -77,7 +85,7 @@ function simulateTypingEffect(message, element) {
     typeCharacter();
 }
 
-// Send a message from the user to the chatbot
+// ✅ **Send a message from the user to the chatbot**
 export async function sendMessage() {
     const userInput = document.getElementById("user-input");
     const message = userInput.value.trim();
@@ -87,20 +95,29 @@ export async function sendMessage() {
     userInput.value = "";
 
     try {
+        console.log("📡 Sending user message:", message);
+
         const response = await fetch("/api/chat", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ message }),
         });
 
+        if (!response.ok) {
+            throw new Error(`HTTP Error! Status: ${response.status}`);
+        }
+
         const data = await response.json();
+        console.log("✅ Chatbot Response:", data);
+
         appendMessage("bot", "Efficient Movers AI Assistant 🤖", formatMessage(data.reply), true);
     } catch (error) {
+        console.error("❌ Error sending message:", error);
         appendMessage("error", "Error", "AI service is currently unavailable.");
     }
 }
 
-// Format AI responses with proper styling and clickable links
+// ✅ **Format AI responses with proper styling and clickable links**
 function formatMessage(message) {
     return message
         .replace(/\*\*(.*?)\*\*/g, "<b>$1</b>")  // Convert **bold** to <b>bold</b>

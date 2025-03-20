@@ -5,7 +5,7 @@ dotenv.config();
 
 // ✅ Create database connection pool
 export const db = mysql.createPool({
-    host: process.env.DB_HOST || "localhost",
+    host: process.env.DB_HOST || "127.0.0.1",
     user: process.env.DB_USER || "appointment_user",
     password: process.env.DB_PASSWORD || "Password123!",
     database: process.env.DB_NAME || "movers_db",

@@ -1,7 +1,7 @@
 import { db } from "../config/db.js";
 
 // ✅ Create a new appointment
-export const createAppointment = async (req, res) => {
+export const submitAppointment = async (req, res) => {
     try {
         const { name, phone, email, from_address, to_address, service, message } = req.body;
 
@@ -19,7 +19,7 @@ export const createAppointment = async (req, res) => {
 };
 
 // ✅ Fetch all appointments
-export const getAppointments = async (req, res) => {
+export const fetchAppointments = async (req, res) => {
     try {
         const [appointments] = await db.execute("SELECT * FROM appointments ORDER BY created_at DESC");
         res.json(appointments);

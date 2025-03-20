@@ -1,24 +1,21 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
+import { db } from "./config/db.js";
 import appointmentRoutes from "./routes/appointments.js";
+import chatRoutes from "./routes/chat.js";
 
 dotenv.config();
-
 const app = express();
-const PORT = process.env.PORT || 3000;
+const port = process.env.PORT || 3000;
 
-// Middleware
-app.use(express.json()); // Parse JSON bodies
-app.use(cors()); // Enable CORS for cross-origin requests
-
-// Serve static files (frontend)
+app.use(express.json());
+app.use(cors());
 app.use(express.static("public"));
 
-// Register API routes
-app.use("/api/appointments", appointmentRoutes);
+// ✅ Register Stripe routes
 
-// Start the server
-app.listen(PORT, () => {
-    console.log(`🚀 Server running on http://localhost:${PORT}`);
-});
+app.use("/api/appointments", appointmentRoutes);
+app.use("/api/chat", chatRoutes);
+
+app.listen(port, () => console.log(`🚀 Server running on http://localhost:${port}`));

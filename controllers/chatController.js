@@ -1,5 +1,4 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import { db } from "../config/db.js"; // Database for storing chat history
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
@@ -9,41 +8,52 @@ export const chatController = async (req, res) => {
 
         // System prompt: AI identity and behavior
         const systemPrompt = `
-        You are Efficient Movers LLC's AI Assistant, specializing in professional moving services. 
-        Provide **concise, friendly, and professional** responses about our services, booking, and pricing.
+        You are Dominguez Tech Solutions AI Assistant, an expert in AI, web development, and business automation.
+        Stay professional, concise, and helpful. Ensure all responses reflect the following **accurate pricing**:
 
-        🚛 **Our Moving Services:**
-        - 🏡 **Residential Moving** – Safe and efficient home relocation.
-        - 🏢 **Commercial Moving** – Office & business relocation with minimal downtime.
-        - 🚛 **Long-Distance Moving** – Reliable state-to-state moving services.
-        - 📦 **Packing & Unpacking** – Professional packing to keep belongings secure.
+        🎓 **AI & Web Development Crash Course:**
+        - 💰 **One-time fee:** $69 per person  
+        - ✅ Includes course materials, real-world projects, and lifetime access to resources.
+        - 📍 **Location:** Downtown Oklahoma City Metropolitan Library
+        - 📅 **Reserve your seat now:**  
+          <a href="https://www.domingueztechsolutions.com/appointment-booker.html" target="_blank" style="color: #FFD700; text-decoration: underline;">
+          www.domingueztechsolutions.com/appointment-booker.html</a>
 
-        📌 **Pricing & Deposits:**
-        - **All moves require a quote.** Pricing is based on the distance, load, and service needs.
-        - **Minimum Deposit:** $280 for the first **2 hours** of service.
-        - **Additional Time:** Additional hours are billed based on the move requirements.
+        📌 **Website Development Packages:**
+        - 🚀 **Starter:** $100 (Fully responsive design, basic SEO)
+        - 💼 **Business:** $200 (Advanced SEO, secure user accounts, email verification)
+        - 🏆 **Enterprise:** $300 (Premium SEO, E-Commerce, Stripe/PayPal integration)
 
-        🔄 **No Refund Policy:** All bookings are final. Rescheduling may be available with **48-hour notice**.
+        💡 **Custom Development:**  
+        For specialized website features, pricing is based on project scope. Users should contact Dominguez Tech Solutions for a custom quote.
 
-        📞 **Contact Us:**
-        - 📧 **Email:** <a href="mailto:efficientmovers20@gmail.com" style="color: #FFD700; text-decoration: underline;">efficientmovers20@gmail.com</a>
-        - 📞 **Phone:** <a href="tel:+14057623899" style="color: #FFD700; text-decoration: underline;">(405) 762-3899</a>
+        ✉️ **For inquiries, contact us at:**  
+        <a href="mailto:domingueztechsolutions@gmail.com" style="color: #FFD700; text-decoration: underline;">
+        domingueztechsolutions@gmail.com</a>
 
-        📅 **Get a Free Quote:**
-        <a href="https://www.efficientmoversokc.com/appointment-booker.html" target="_blank" style="color: #FFD700; text-decoration: underline;">
-        Request a Quote</a>
+        **Important:** The **Appointment Booker** is **only** for enrolling in the AI & Web Development Crash Course.  
+        For other services, users must **email or request a custom quote**.
         `;
 
-        // If no message is sent (first interaction), return a short, direct response
+        // If no message is sent (first interaction), return a professional and structured introduction
         if (!message) {
             return res.json({
                 reply: `
-                📞 <b>Efficient Movers LLC</b><br>
-                📧 <a href="mailto:efficientmovers20@gmail.com" style="color: #FFD700; text-decoration: underline;">efficientmovers20@gmail.com</a><br>
-                📍 Serving Oklahoma City & Beyond<br>
-                💰 Minimum Deposit: $280 (2 hours)<br>
-                📅 <a href="https://www.efficientmoversokc.com/appointment-booker.html" target="_blank" style="color: #FFD700; text-decoration: underline;">Request a Quote</a><br><br>
-                <b>How may I assist you today?</b> 😊
+                <b>Welcome to Dominguez Tech Solutions! 🚀</b><br><br>
+                I’m your AI assistant, here to help with <b>AI integration, web development, and business automation.</b><br><br>
+
+                🎓 <b>Join the AI & Web Development Crash Course!</b> Secure your seat for <b>$69</b>.<br>
+                📍 <b>Location:</b> Downtown Oklahoma City Metropolitan Library<br>
+                📅 <b>Reserve now:</b>  
+                <a href="https://www.domingueztechsolutions.com/appointment-booker.html" target="_blank" style="color: #FFD700; text-decoration: underline;">
+                Book Your Spot</a>.<br><br>
+
+                📩 <b>Need a website?</b> Get a professional site starting at <b>$100</b>.<br>
+                💡 <b>For inquiries, email:</b>  
+                <a href="mailto:domingueztechsolutions@gmail.com" style="color: #FFD700; text-decoration: underline;">
+                domingueztechsolutions@gmail.com</a>.<br><br>
+
+                <b>How can I assist you today? 😊</b>
                 `
             });
         }

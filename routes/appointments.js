@@ -1,12 +1,12 @@
 import express from "express";
-import { createAppointment, getAppointments } from "../controllers/appointmentController.js";
+import { submitAppointment, fetchAppointments } from "../controllers/appointmentController.js";
 
 const router = express.Router();
 
-// ✅ Route to create a new appointment
-router.post("/", createAppointment);
+// Appointment submission route
+router.post("/", submitAppointment);
 
-// ✅ Route to fetch all appointments
-router.get("/", getAppointments);
+// Fetch all appointments route
+router.get("/", fetchAppointments);
 
 export default router;

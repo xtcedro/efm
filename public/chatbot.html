@@ -8,9 +8,12 @@
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/chatbot.css">
 
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    
+    <!-- JavaScript -->
     <script type="module" src="assets/js/script.js"></script>
 </head>
 <body>
@@ -31,8 +34,14 @@
 
     <!-- Chatbot Container -->
     <div id="chat-container" class="chat-container fade-in">
-        <div id="chat-box"></div>
+        <div id="chat-box" class="chat-box">
+            <div class="chat-message bot-message">
+                <span class="bot-label">Efficient Movers AI Assistant 🤖:</span>
+                <div class="bot-text">Hello! How can I assist you today?</div>
+            </div>
+        </div>
 
+        <!-- Input Area -->
         <div class="input-container">
             <input type="text" id="user-input" placeholder="Type your message..." />
             <button id="send-btn"><i class="fas fa-paper-plane"></i> Send</button>
@@ -41,6 +50,12 @@
 
     <!-- Footer -->
     <footer id="footer"></footer>
+
+    <!-- Chatbot Script -->
+    <script type="module">
+        import { initializeChatbot } from './assets/js/chatbot.js';
+        initializeChatbot();
+    </script>
 
 </body>
 </html>

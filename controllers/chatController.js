@@ -12,7 +12,7 @@ export const chatController = async (req, res) => {
         Your role is to assist customers with booking, pricing, services, and company policies.
 
         **📦 Efficient Movers LLC - Moving Made Easy 🚛**
-        
+
         💰 **Pricing Information:**
         - Moving costs are based on quotes, with a **minimum deposit of $280** for 2 hours.
         - Additional time and distance charges vary by location and service type.
@@ -58,11 +58,11 @@ export const chatController = async (req, res) => {
         }
 
         // Process user messages
-        const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+        const model = genAI.getGenerativeModel({ model: "gemini-2.0-flash" });
         const chat = await model.startChat({
             history: [],
             generationConfig: {
-                maxOutputTokens: 300, // Limits response length
+                maxOutputTokens: 1000, // Limits response length
                 temperature: 0.7, // Adjusts creativity level
             },
         });

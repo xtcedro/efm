@@ -11,10 +11,14 @@ export const createPaymentIntent = async (req, res) => {
             return res.status(400).json({ error: "Invalid amount" });
         }
 
+        // ✅ Add multiple payment methods: Card, Cash App, Google Pay, Apple Pay
         const paymentIntent = await stripe.paymentIntents.create({
             amount,
             currency: "usd",
-            payment_method_types: ['card'],
+            payment_method_types: ['card', 'cashapp'], // ✅ Enable Cash App Pay
+            automatic_payment_methods: {
+                enabled: true, // ✅ Enables Apple Pay & Google Pay
+            }
         });
 
         res.status(200).json({ clientSecret: paymentIntent.client_secret });

@@ -1,12 +1,12 @@
 /* 🚀 Appointments List Section */
 .appointments-list {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 3rem auto;
     padding: 2.5rem;
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
     text-align: center;
     transition: all 0.3s ease-in-out;
 }
@@ -14,11 +14,11 @@
 /* 🌟 Section Title */
 .appointments-list h2 {
     color: var(--primary-color);
-    font-size: 2.2rem;
+    font-size: 2.4rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
 }
 
 /* ⚠ Urgent Message */
@@ -27,21 +27,49 @@
     font-size: 1.3rem;
     font-weight: bold;
     margin-bottom: 1.5rem;
-    background: rgba(255, 0, 0, 0.1);
-    padding: 1rem;
-    border-radius: 8px;
+    background: rgba(255, 0, 0, 0.12);
+    padding: 1.2rem;
+    border-radius: 10px;
     animation: fadeIn 0.8s ease-in-out;
 }
 
 /* 📅 Appointments Container */
 #appointments-container {
-    background: var(--background-light);
-    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+
+/* 🧾 Appointment Card */
+.appointment-card {
+    background: var(--card-bg);
+    border-left: 5px solid var(--secondary-color);
     border-radius: 12px;
-    border: 2px solid var(--border-color);
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-    min-height: 120px;
-    transition: all 0.3s ease-in-out;
+    padding: 1.5rem;
+    text-align: left;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.6s ease-in-out;
+}
+
+.appointment-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Card Content */
+.appointment-card h3 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+}
+
+.appointment-card p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 0.4rem;
 }
 
 /* ⏳ Loading Message */
@@ -57,27 +85,27 @@
 .center-btn {
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+    margin-top: 2.5rem;
 }
 
 .btn.back-btn {
     background: linear-gradient(135deg, var(--accent-color) 30%, var(--secondary-color) 100%);
     color: var(--text-light);
-    padding: 14px 18px;
+    padding: 14px 20px;
     font-size: 1.1rem;
     font-weight: 700;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer;
     text-align: center;
     transition: all 0.4s ease-in-out;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
 }
 
 .btn.back-btn:hover {
     background: var(--primary-color);
     transform: scale(1.08);
-    box-shadow: 0 0 20px var(--secondary-color);
+    box-shadow: 0 0 22px var(--secondary-color);
 }
 
 /* 🔄 Smooth Animations */
@@ -95,12 +123,16 @@
 /* 📱 Responsive Design */
 @media (max-width: 768px) {
     .appointments-list {
-        width: 95%;
+        width: 94%;
         padding: 2rem;
     }
 
     .appointments-list h2 {
         font-size: 2rem;
+    }
+
+    .appointment-card {
+        padding: 1.2rem;
     }
 
     .btn.back-btn {

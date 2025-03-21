@@ -2,43 +2,63 @@ export function initializeStripe(publicKey, formSelector, amountSelector, button
     const stripe = Stripe(publicKey);
     const elements = stripe.elements();
 
-    // Create a Payment Request Button for Apple Pay, Google Pay, and Cash App
-    const paymentRequest = stripe.paymentRequest({
-        country: 'US',
-        currency: 'usd',
-        total: {
-            label: 'Total Payment',
-            amount: 0, // Default to $0, will update dynamically
+    // ✅ Create Card Element (Standard Card Payments)
+    const cardElement = elements.create("card", {
+        style: {
+            base: {
+                fontSize: "16px",
+                color: "#32325d",
+                "::placeholder": { color: "#aab7c4" },
+            },
+            invalid: { color: "#fa755a" },
         },
+    });
+
+    // ✅ Ensure Card Element Mounts Properly
+    const cardContainer = document.querySelector(formSelector);
+    if (!cardContainer) {
+        console.error("❌ Card Element container not found:", formSelector);
+    } else {
+        cardElement.mount(formSelector);
+        console.log("✅ Card Element successfully mounted.");
+    }
+
+    // ✅ Apple Pay, Google Pay, Cash App Pay Setup
+    const paymentRequest = stripe.paymentRequest({
+        country: "US",
+        currency: "usd",
+        total: { label: "Total Payment", amount: 0 }, // Default to $0, will update dynamically
         requestPayerName: true,
         requestPayerEmail: true,
-        paymentMethodTypes: ['card', 'apple_pay', 'google_pay', 'cashapp'],
+        paymentMethodTypes: ["card", "apple_pay", "google_pay", "cashapp"],
     });
 
-    const paymentRequestButton = elements.create('paymentRequestButton', {
-        paymentRequest,
-    });
+    const paymentRequestButton = elements.create("paymentRequestButton", { paymentRequest });
 
-    // Check if the Payment Request Button is supported
+    // ✅ Check Payment Request Button Support
     paymentRequest.canMakePayment().then((result) => {
         if (result) {
-            paymentRequestButton.mount('#payment-request-button');
+            paymentRequestButton.mount("#payment-request-button");
+            console.log("✅ Payment Request Button Mounted.");
         } else {
-            document.getElementById('payment-request-button').style.display = 'none';
+            console.warn("⚠️ Payment Request Button not supported on this device.");
+            document.getElementById("payment-request-button").style.display = "none";
         }
     });
-
-    // Create a traditional Card Element
-    const cardElement = elements.create("card");
-    cardElement.mount(formSelector);
 
     return { stripe, cardElement, paymentRequest, amountSelector, buttonSelector, messageSelector };
 }
 
+// ✅ Handle Payment Processing
 export async function handlePayment({ stripe, cardElement, paymentRequest, amountSelector, buttonSelector, messageSelector }) {
     const paymentForm = document.getElementById(amountSelector);
     const paymentButton = document.getElementById(buttonSelector);
     const paymentMessage = document.getElementById(messageSelector);
+
+    if (!paymentForm || !paymentButton || !paymentMessage) {
+        console.error("❌ Payment form elements not found. Aborting payment process.");
+        return;
+    }
 
     paymentForm.addEventListener("submit", async (event) => {
         event.preventDefault();
@@ -50,9 +70,10 @@ export async function handlePayment({ stripe, cardElement, paymentRequest, amoun
         }
 
         paymentButton.disabled = true;
-        paymentMessage.textContent = "Processing payment...";
+        paymentMessage.textContent = "⏳ Processing payment...";
 
         try {
+            // ✅ Create a Payment Intent
             const response = await fetch("/api/stripe/create-payment-intent", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
@@ -61,22 +82,29 @@ export async function handlePayment({ stripe, cardElement, paymentRequest, amoun
 
             const { clientSecret } = await response.json();
 
-            // Handle Payment Request Button Flow
-            paymentRequest.on('paymentmethod', async (event) => {
+            if (!clientSecret) {
+                throw new Error("❌ Server did not return a valid payment intent.");
+            }
+
+            // ✅ Handle Payment Request Button Flow
+            paymentRequest.on("paymentmethod", async (event) => {
+                console.log("💳 Processing Payment Request Button Payment...");
                 const { paymentIntent, error } = await stripe.confirmCardPayment(clientSecret, {
                     payment_method: event.paymentMethod.id,
                 });
 
                 if (error) {
                     paymentMessage.textContent = `❌ Payment failed: ${error.message}`;
-                    event.complete('fail');
+                    event.complete("fail");
+                    console.error("❌ Payment Request Error:", error);
                 } else {
                     paymentMessage.textContent = "✅ Payment Successful!";
-                    event.complete('success');
+                    event.complete("success");
+                    console.log("🎉 Payment Request Button Success!");
                 }
             });
 
-            // Handle Traditional Card Payment Flow
+            // ✅ Handle Traditional Card Payment Flow
             const { paymentIntent, error } = await stripe.confirmCardPayment(clientSecret, {
                 payment_method: { card: cardElement },
             });
@@ -84,10 +112,13 @@ export async function handlePayment({ stripe, cardElement, paymentRequest, amoun
             if (error) {
                 paymentMessage.textContent = `❌ Payment failed: ${error.message}`;
                 paymentButton.disabled = false;
+                console.error("❌ Card Payment Error:", error);
             } else if (paymentIntent.status === "succeeded") {
                 paymentMessage.textContent = "✅ Thank you for your payment!";
+                console.log("🎉 Card Payment Successful!");
             }
         } catch (err) {
+            console.error("❌ Payment Processing Error:", err);
             paymentMessage.textContent = `❌ Error: ${err.message}`;
             paymentButton.disabled = false;
         }
